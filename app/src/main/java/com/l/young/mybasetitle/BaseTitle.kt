@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.l.young.basetitlelibrary.R
+import com.l.young.mybasetitle.R
 
 
 /**
