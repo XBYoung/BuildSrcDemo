@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseTitle">
+        <attr name="isCanBack" format="boolean" />
+        <attr name="isSetting" format="boolean" />
+        <attr name="isTextSetting" format="boolean" />
+        <attr name="title_text" format="string" />
+        <attr name="setting_text" format="string" />
+        <attr name="title_background" format="reference" />
+        <attr name="setting_res" format="reference" />
+        <attr name="back_res" format="reference" />
+        <attr name="title_size" format="dimension" />
+        <attr name="title_content_color" format="reference" />
+    </declare-styleable>
+</resources>

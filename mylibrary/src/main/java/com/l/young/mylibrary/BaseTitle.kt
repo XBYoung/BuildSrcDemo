@@ -9,13 +9,13 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.l.young.mybasetitle.R
+import com.l.young.mylibrary.R
 
 
 /**
  * Created by luke on 2017/1/18.
  */
-class BaseTitle : RelativeLayout {
+open class BaseTitle : RelativeLayout {
     private var isCanback: Boolean = false
     private var isSetting: Boolean = false
     private var isTextSetting: Boolean = false
