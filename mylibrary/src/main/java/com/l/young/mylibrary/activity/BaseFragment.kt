@@ -33,25 +33,7 @@ abstract class BaseFragment : Fragment(), ResInterface, LoadingInterface {
 
         if (contentView == null) {
             contentView = inflater.inflate(getLayoutId(), null)
-
-
         }
         return contentView
-    }
-
-    companion object {
-
-
-        fun isNetworkConnected(context: Context?): Boolean {
-            if (context != null) {
-                val mConnectivityManager = context
-                        .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-                val mNetworkInfo = mConnectivityManager.activeNetworkInfo
-                if (mNetworkInfo != null) {
-                    return mNetworkInfo.isAvailable
-                }
-            }
-            return false
-        }
     }
 }

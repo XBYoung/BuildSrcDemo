@@ -1,7 +1,6 @@
 package com.l.young.mylibrary.activity
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.afollestad.materialdialogs.MaterialDialog
 import com.l.young.mylibrary.utils.ActivityManagerUtils
-import java.io.Serializable
 import java.util.ArrayList
 
 
@@ -21,23 +19,6 @@ import java.util.ArrayList
 abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
 
     private lateinit var loadDialog: MaterialDialog
-    /**
-     * 获取版本号
-     *
-     * @return 当前应用的版本号
-     */
-    val version: String?
-        get() {
-            try {
-                val manager = this.packageManager
-                val info = manager.getPackageInfo(this.packageName, 0)
-                return info.versionName
-            } catch (e: Exception) {
-
-                return null
-            }
-
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +92,6 @@ abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
     }
 
 
-    /*************************************BaseInterface ContextInterface */
 
     /**
      * example
@@ -125,8 +105,7 @@ abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
     fun initView() {}
 
 
-    /*************************************FragmentInterface */
-
+    /*************************************FragmentInterface ******************************/
 
     fun <T : BaseFragment> addFragment(frameLayoutId: Int, cls: Class<T>): T? {
         var t: T? = null
@@ -239,57 +218,6 @@ abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
         loadDialog?.dismiss()
     }
 
-
-
-    fun getIntent(cls: Class<out BaseActivity>): Intent {
-        return Intent(this, cls)
-    }
-
-    /**
-     * @param intent
-     * @param key
-     * @param value
-     * @hide
-     */
-    fun putExtra(intent: Intent, key: String, value: Any) {
-        if (value is String) {
-            intent.putExtra(key, value)
-        } else if (value is Int) {
-            intent.putExtra(key, value)
-        } else if (value is Boolean) {
-            intent.putExtra(key, value)
-        } else if (value is Serializable) {
-            intent.putExtra(key, value)
-        }
-    }
-
-    /**
-     * @param intent
-     * @param value
-     * @hide
-     */
-    fun putExtra(intent: Intent, value: Any) {
-        if (value is String) {
-            intent.putExtra("stringValue", value)
-        } else if (value is Int) {
-            intent.putExtra("intValue", value)
-        } else if (value is Boolean) {
-            intent.putExtra("booleanValue", value)
-        } else if (value is Serializable) {
-            intent.putExtra("serializableValue", value)
-        }
-    }
-
-    /**
-     * @param cls
-     * @param data
-     * @hide
-     */
-    private fun startActivityWithData(cls: Class<out BaseActivity>, data: Any) {
-        val intent = getIntent(cls)
-        putExtra(intent, data)
-        startActivity(intent)
-    }
 
     companion object {
         private val TAG = "TSPAPP_TAG"

@@ -4,18 +4,13 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 27
-
-
-
+    compileSdkVersion Dependencies.Versions.compileSdkVersion
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion Dependencies.Versions.minSdkVersion
+        targetSdkVersion Dependencies.Versions.targetSdkVersion
+        versionCode Dependencies.Versions.versionCode
+        versionName Dependencies.Versions.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -23,19 +18,25 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug{
+
+        }
     }
 
 }
 
 dependencies {
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation Dependencies.Libs.support_appcompat_v7
+    testImplementation Dependencies.Libs.junit
+    androidTestImplementation Dependencies.Libs.runner
+    androidTestImplementation Dependencies.Libs.espresso_core
+    implementation Dependencies.Libs.kotlin_stdlib_jdk7
+    implementation Dependencies.Libs.material_dialogs_commons
+    implementation Dependencies.Libs.material_dialogs_core
+    implementation Dependencies.Libs.permissionsdispatcher
+    kapt Dependencies.Libs.permissionsdispatcher
 }
 repositories {
     mavenCentral()
