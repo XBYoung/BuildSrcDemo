@@ -145,7 +145,7 @@ abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
         return t
     }
 
-    fun <T : BaseFragment> addFragmentList(frameLayoutId: Int, clsArray: Array<Class<T>>): ArrayList<T> {
+    fun <T : BaseFragment> addFragmentList(frameLayoutId: Int, clsArray: Array<Class<out BaseFragment>>): ArrayList<T> {
         val mFragmentList = ArrayList<T>()
         val mFragmentManager = supportFragmentManager
         val mTransaction = mFragmentManager.beginTransaction()
