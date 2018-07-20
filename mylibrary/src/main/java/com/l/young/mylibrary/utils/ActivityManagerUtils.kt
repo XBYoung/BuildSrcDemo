@@ -18,6 +18,7 @@ class ActivityManagerUtils {
 
     class Inner {
         companion object {
+
             val instance = ActivityManagerUtils()
         }
     }

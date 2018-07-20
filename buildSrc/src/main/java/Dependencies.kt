@@ -1,7 +1,8 @@
-    /**
-     * 版本
-     */
 
+    /**
+
+     * 版本
+    */
     object Versions {
 
         val compileSdkVersion =27
@@ -30,8 +31,12 @@
 
     }
 
+
+
     /**
+
      * app
+
      */
 
     object App {
@@ -42,6 +47,7 @@
 
     /**
      * 依赖包
+
      */
 
     object Libs {
@@ -68,4 +74,6 @@
         val  flyco = "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar"
 
 
+        
     }
+
