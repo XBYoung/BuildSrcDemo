@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BaseTitleLibrary</string>
+    <string name="send_code">发送验证码</string>
 </resources>

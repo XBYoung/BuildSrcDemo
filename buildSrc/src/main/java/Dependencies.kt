@@ -74,6 +74,6 @@
         val  flyco = "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar"
 
 
-        
+
     }
 

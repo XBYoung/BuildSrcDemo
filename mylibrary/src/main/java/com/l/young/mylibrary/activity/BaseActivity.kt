@@ -132,7 +132,7 @@ abstract class BaseActivity : AppCompatActivity(), LoadingInterface {
         for (i in clsArray.indices) {
             var t: T? = null
             try {
-                t = clsArray[i].newInstance()
+                t = clsArray[i].newInstance() as T?
                 if (!t!!.isAdded) {
                     mTransaction.add(frameLayoutId, t, clsArray[i].name).hide(t)
                 }

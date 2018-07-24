@@ -1,11 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: 'kotlin'
 buildscript {
-<<<<<<< HEAD
     ext.kotlin_version = Versions.kotlin_version
-=======
-    ext.kotlin_version = '1.2.30'
->>>>>>> 40c1150f27123fd63d5ae0dbfcf3596903ad3727
+    //ext.kotlin_version = '1.2.30'
     repositories {
         google()
         jcenter()

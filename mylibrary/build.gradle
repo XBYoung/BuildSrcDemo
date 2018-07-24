@@ -4,7 +4,6 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-<<<<<<< HEAD
     compileSdkVersion Versions.compileSdkVersion
 
     defaultConfig {
@@ -15,15 +14,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
 
-=======
-    compileSdkVersion Dependencies.Versions.compileSdkVersion
-    defaultConfig {
-        minSdkVersion Dependencies.Versions.minSdkVersion
-        targetSdkVersion Dependencies.Versions.targetSdkVersion
-        versionCode Dependencies.Versions.versionCode
-        versionName Dependencies.Versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
->>>>>>> 40c1150f27123fd63d5ae0dbfcf3596903ad3727
+
     }
 
     buildTypes {
@@ -32,11 +23,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug{
-<<<<<<< HEAD
             minifyEnabled false
-=======
 
->>>>>>> 40c1150f27123fd63d5ae0dbfcf3596903ad3727
         }
     }
 
@@ -45,7 +33,6 @@ android {
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-<<<<<<< HEAD
     api Libs.support_appcompat_v7
     api Libs.support_v4
     api Libs.constraint_layout
@@ -59,22 +46,10 @@ dependencies {
     api Libs.permissionsdispatcher
     kapt Libs.permissionsdispatcher
     api Libs.flyco
-
     api Libs.retrofit2
     api Libs.rxjava2
     api Libs.retrofit_rxjava_adapter2
 
-=======
-    implementation Dependencies.Libs.support_appcompat_v7
-    testImplementation Dependencies.Libs.junit
-    androidTestImplementation Dependencies.Libs.runner
-    androidTestImplementation Dependencies.Libs.espresso_core
-    implementation Dependencies.Libs.kotlin_stdlib_jdk7
-    implementation Dependencies.Libs.material_dialogs_commons
-    implementation Dependencies.Libs.material_dialogs_core
-    implementation Dependencies.Libs.permissionsdispatcher
-    kapt Dependencies.Libs.permissionsdispatcher
->>>>>>> 40c1150f27123fd63d5ae0dbfcf3596903ad3727
 }
 repositories {
     mavenCentral()
